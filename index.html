@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Catalog Studio — Marketplace Catalogue Maker</title>
+<style>
+:root{--bg:#f4f6fa;--panel:#fff;--ink:#182230;--muted:#687586;--line:#e5e9f0;--accent:#5b55e7;--accent2:#8a5cf6;--soft:#f0efff;--good:#16845b}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Arial}
+header{height:68px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 28px;position:sticky;top:0;z-index:5}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:18px}.logo{width:34px;height:34px;border-radius:11px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:grid;place-items:center;color:#fff;font-weight:900}
+.pill{border:1px solid var(--line);border-radius:30px;padding:7px 12px;color:var(--muted);font-size:12px}
+main{max-width:1440px;margin:auto;padding:26px 28px 50px}.hero{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:22px}.eyebrow{color:var(--accent);font-size:11px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase}h1{font-size:28px;letter-spacing:-.8px;margin:5px 0}.sub{color:var(--muted);margin:0}
+.layout{display:grid;grid-template-columns:360px minmax(0,1fr);gap:20px;align-items:start}.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:19px;box-shadow:0 4px 18px #1c2b4410}.panel h2{font-size:15px;margin:0 0 15px}.section{padding-bottom:17px;margin-bottom:17px;border-bottom:1px solid var(--line)}.section:last-child{border:0;padding:0;margin:0}
+label{display:block;font-size:12px;font-weight:700;margin:0 0 7px;color:#394657}input,select,textarea{width:100%;border:1px solid #dce2eb;border-radius:9px;padding:10px 11px;background:#fff;color:var(--ink);font:inherit;outline:none}input:focus,select:focus,textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px #5b55e71a}
+.field{margin-bottom:12px}.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}.upload{border:1.5px dashed #cbd2e0;border-radius:12px;padding:17px;text-align:center;background:#fafbff;cursor:pointer}.upload strong{display:block;margin:6px 0 2px}.upload small{color:var(--muted)}.upload input{display:none}.preview-thumb{max-width:100%;max-height:125px;object-fit:contain;margin-top:10px;border-radius:8px}
+.checks{display:flex;gap:7px;flex-wrap:wrap}.check{display:flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:9px;padding:8px 10px;font-size:12px;cursor:pointer}.check input{width:auto;margin:0;accent-color:var(--accent)}
+.chips{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.chip{border:1px solid var(--line);border-radius:10px;padding:9px 10px;cursor:pointer;background:#fff;text-align:left;font-size:12px}.chip.active{border-color:var(--accent);background:var(--soft);color:#433bd0;font-weight:700}
+.btn{border:0;border-radius:10px;padding:11px 15px;background:var(--accent);color:#fff;font-weight:750;cursor:pointer}.btn:hover{filter:brightness(.96)}.btn.secondary{background:#f0f2f7;color:#354154;border:1px solid var(--line)}.btn:disabled{opacity:.5;cursor:not-allowed}.full{width:100%}
+.workspace-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;gap:12px}.workspace-head h2{margin:0;font-size:16px}.actions{display:flex;gap:8px;flex-wrap:wrap}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.tile{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}.tile-top{aspect-ratio:4/5;background:#f1f0ec;display:grid;place-items:center;position:relative;overflow:hidden}.tile-top canvas{width:100%;height:100%;object-fit:contain}.tile-info{padding:11px 12px}.tile-info strong{font-size:12px}.tile-info small{display:block;color:var(--muted);margin-top:3px}.status{color:var(--good);font-weight:700;font-size:11px}.empty{border:1px dashed #cbd2e0;border-radius:14px;min-height:360px;display:grid;place-items:center;text-align:center;padding:30px;color:var(--muted)}.empty b{display:block;color:var(--ink);font-size:16px;margin-bottom:5px}.notice{background:#fff8e8;border:1px solid #f3dfad;color:#72551b;border-radius:10px;padding:11px 12px;font-size:12px;margin-top:12px}.foot{font-size:11px;color:var(--muted);margin-top:16px}
+@media(max-width:900px){.layout{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){header{padding:0 15px}main{padding:18px 14px}.hero{display:block}.hero .pill{display:inline-block;margin-top:10px}.grid{grid-template-columns:1fr 1fr}.panel{padding:15px}.workspace-head{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<header><div class="brand"><div class="logo">C</div> Catalog Studio</div><div class="pill">Marketplace creative workspace · Local demo</div></header>
+<main>
+ <div class="hero"><div><div class="eyebrow">Seller creative suite</div><h1>One product. Multiple catalogues.</h1><p class="sub">Create marketplace-ready visual variations from one product photo.</p></div><div class="pill">Flipkart · Amazon · Meesho</div></div>
+ <div class="layout">
+  <section class="panel">
+   <div class="section"><h2>01 · Product details</h2>
+    <label class="upload" for="photo"><div style="font-size:24px">＋</div><strong>Upload product photo</strong><small>JPG, PNG or WEBP · clear product image works best</small><img id="thumb" class="preview-thumb" hidden></label><input id="photo" type="file" accept="image/*">
+    <div class="field" style="margin-top:13px"><label>Product name</label><input id="name" value="Women's Woven Saree" placeholder="e.g. Cotton Silk Jamdani Saree"></div>
+    <div class="two"><div class="field"><label>Category</label><select id="category"><option>Fashion / Saree</option><option>Fashion / Apparel</option><option>Home & Living</option><option>Beauty</option><option>Accessories</option><option>Other</option></select></div><div class="field"><label>SKU / Style ID</label><input id="sku" placeholder="e.g. JAM-001"></div></div>
+    <div class="field"><label>Short product highlight</label><input id="highlight" value="Traditional design · Everyday elegance"></div>
+   </div>
+   <div class="section"><h2>02 · Marketplace format</h2><div class="checks">
+    <label class="check"><input type="checkbox" class="market" value="Amazon" checked> Amazon</label><label class="check"><input type="checkbox" class="market" value="Flipkart" checked> Flipkart</label><label class="check"><input type="checkbox" class="market" value="Meesho" checked> Meesho</label>
+   </div><p class="foot">The demo uses a square 1:1 canvas for previews. Confirm each marketplace's current image rules before uploading.</p></div>
+   <div class="section"><h2>03 · Choose creative directions</h2><label>Background styles</label><div class="chips" id="backgrounds">
+    <button class="chip active" data-value="Studio White">Studio White</button><button class="chip active" data-value="Royal Beige">Royal Beige</button><button class="chip active" data-value="Botanical Green">Botanical Green</button><button class="chip" data-value="Festive Glow">Festive Glow</button><button class="chip" data-value="Modern Home">Modern Home</button><button class="chip" data-value="Minimal Grey">Minimal Grey</button>
+   </div><div style="height:13px"></div><label>Layout / pose direction</label><div class="chips" id="poses">
+    <button class="chip active" data-value="Hero Product">Hero Product</button><button class="chip active" data-value="Editorial Angle">Editorial Angle</button><button class="chip" data-value="Lifestyle Scene">Lifestyle Scene</button><button class="chip" data-value="Detail Focus">Detail Focus</button>
+   </div><div style="height:13px"></div><label>Model treatment</label><select id="model"><option value="No model · product only">No model · product only</option><option value="Model concept · requires AI service">Model concept · requires AI service</option><option value="Mannequin / flat-lay concept">Mannequin / flat-lay concept</option></select>
+   <div class="notice"><b>AI model generation:</b> realistic people wearing or holding your exact product, with new poses, require an image-generation API. This standalone demo does not invent a model or alter the product design.</div>
+   </div>
+   <button class="btn full" id="generate">✦ Generate catalogue variations</button>
+   <p class="foot">This browser demo composes downloadable designs locally. It does not upload products to marketplaces.</p>
+  </section>
+  <section>
+   <div class="workspace-head"><div><h2>Generated catalogue</h2><div class="foot" id="count">No variations yet</div></div><div class="actions"><button class="btn secondary" id="downloadAll" disabled>↓ Download all</button><button class="btn secondary" id="clear">Clear</button></div></div>
+   <div id="results" class="empty"><div><div style="font-size:35px;margin-bottom:10px">✧</div><b>Your catalogue variations will appear here</b>Upload a product photo, choose styles and click Generate.</div></div>
+  </section>
+ </div>
+</main>
+<script>
+const $=id=>document.getElementById(id);let source=null,generated=[];
+$('photo').addEventListener('change',e=>{const f=e.target.files[0];if(!f)return;const u=URL.createObjectURL(f);const im=new Image();im.onload=()=>{source=im;$('thumb').src=u;$('thumb').hidden=false};im.src=u});
+document.querySelectorAll('.chips').forEach(group=>group.addEventListener('click',e=>{const b=e.target.closest('.chip');if(b)b.classList.toggle('active')}));
+const palettes={
+'Studio White':['#ffffff','#f1f3f6'],'Royal Beige':['#eadcc7','#b79b7c'],'Botanical Green':['#e5eee5','#9eae98'],
+'Festive Glow':['#f6dfc9','#bb7655'],'Modern Home':['#e9e4dc','#aaa59c'],'Minimal Grey':['#e6e8eb','#aeb4bd']};
+function rounded(ctx,x,y,w,h,r){ctx.beginPath();ctx.roundRect(x,y,w,h,r);ctx.fill()}
+function makeCanvas(market,bg,pose,index){
+ const c=document.createElement('canvas');c.width=1200;c.height=1500;const x=c.getContext('2d'),p=palettes[bg]||palettes['Studio White'];
+ const grad=x.createLinearGradient(0,0,1200,1500);grad.addColorStop(0,p[0]);grad.addColorStop(1,p[1]);x.fillStyle=grad;x.fillRect(0,0,1200,1500);
+ // Decorative shapes
+ x.globalAlpha=.18;x.fillStyle='#fff';x.beginPath();x.arc(1060,180,250,0,Math.PI*2);x.fill();x.globalAlpha=1;
+ x.fillStyle='#333';x.font='600 27px Arial';x.fillText(market.toUpperCase()+' CATALOGUE',75,85);
+ x.fillStyle='#777';x.font='22px Arial';x.fillText((pose+' · '+bg).toUpperCase(),75,125);
+ // Product stage
+ x.fillStyle='#ffffff';x.globalAlpha=.48;rounded(x,75,180,1050,1030,35);x.globalAlpha=1;
+ if(source){
+  const maxW=900,maxH=950,scale=Math.min(maxW/source.width,maxH/source.height);
+  const w=source.width*scale,h=source.height*scale;
+  x.shadowColor='rgba(0,0,0,.16)';x.shadowBlur=35;x.shadowOffsetY=16;
+  x.drawImage(source,(1200-w)/2,(180+1030-h)/2,w,h);x.shadowColor='transparent';x.shadowBlur=0;x.shadowOffsetY=0;
+ } else {
+  x.fillStyle='#d9dce2';rounded(x,300,390,600,600,30);x.fillStyle='#8b92a0';x.font='bold 34px Arial';x.textAlign='center';x.fillText('PRODUCT PHOTO',600,700);x.textAlign='left';
+ }
+ x.fillStyle='#202631';x.font='bold 46px Arial';x.fillText(($('name').value||'Product').slice(0,34),75,1300);
+ x.fillStyle='#626d7c';x.font='25px Arial';x.fillText(($('highlight').value||'Marketplace collection').slice(0,54),75,1350);
+ x.fillStyle='#202631';x.font='bold 21px Arial';x.fillText(($('sku').value||'STYLE COLLECTION')+'  •  '+market.toUpperCase(),75,1420);
+ return c;
+}
+function downloadCanvas(c,name){const a=document.createElement('a');a.download=name+'.jpg';a.href=c.toDataURL('image/jpeg',.94);a.click()}
+function slug(s){return s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}
+$('generate').onclick=()=>{
+ const markets=[...document.querySelectorAll('.market:checked')].map(i=>i.value);
+ const bgs=[...$('backgrounds').querySelectorAll('.chip.active')].map(i=>i.dataset.value);
+ const poses=[...$('poses').querySelectorAll('.chip.active')].map(i=>i.dataset.value);
+ if(!source){alert('Please upload a product photo first.');return}
+ if(!markets.length||!bgs.length||!poses.length){alert('Select at least one marketplace, background and layout direction.');return}
+ generated=[];let idx=0;for(const m of markets)for(const b of bgs)for(const p of poses){const c=makeCanvas(m,b,p,idx);generated.push({canvas:c,name:`${slug($('sku').value||$('name').value)}-${slug(m)}-${slug(b)}-${slug(p)}`,label:`${m} · ${b}`,pose:p});idx++}
+ render();$('count').textContent=`${generated.length} variations · ${markets.length} marketplaces`; $('downloadAll').disabled=false;
+};
+function render(){const r=$('results');r.className='grid';r.innerHTML='';generated.forEach((g,i)=>{const card=document.createElement('div');card.className='tile';const top=document.createElement('div');top.className='tile-top';const img=document.createElement('img');img.src=g.canvas.toDataURL('image/jpeg',.85);img.style.cssText='width:100%;height:100%;object-fit:contain';top.append(img);const info=document.createElement('div');info.className='tile-info';info.innerHTML=`<strong>${g.label}</strong><small>${g.pose}</small><div style="display:flex;justify-content:space-between;align-items:center;margin-top:9px"><span class="status">● Ready</span><button class="btn secondary" style="padding:6px 9px;font-size:11px">Download</button></div>`;info.querySelector('button').onclick=()=>downloadCanvas(g.canvas,g.name);card.append(top,info);r.append(card)})}
+$('downloadAll').onclick=()=>generated.forEach((g,i)=>setTimeout(()=>downloadCanvas(g.canvas,g.name),i*250));
+$('clear').onclick=()=>{generated=[];$('results').className='empty';$('results').innerHTML='<div><div style="font-size:35px;margin-bottom:10px">✧</div><b>Your catalogue variations will appear here</b>Upload a product photo, choose styles and click Generate.</div>';$('count').textContent='No variations yet';$('downloadAll').disabled=true};
+</script>
+</body></html>
